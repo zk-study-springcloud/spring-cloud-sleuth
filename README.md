@@ -17,7 +17,7 @@ java -jar zipkin.jar --zipkin.collector.rabbitmq.addresses=localhost
 java -jar zipkin.jar --zipkin.collector.rabbitmq.addresses=localhost --zipkin.collector.rabbitmq.username=guest --zipkin.collector.rabbitmq.password=guest
 ```
 启动顺利的情况下，查看RabbitMQ界面，会增加一条连接，队列中也增加一条，如图所示：
-[!Image](https://github.com/zk-study-springcloud/spring-cloud-sleuth/blob/master/image/1572752547329.jpg)
+![image](https://github.com/zk-study-springcloud/spring-cloud-sleuth/blob/master/image/1572752547329.jpg)
 ### gateway服务和user服务
 - 增加pom依赖
 ```xml
