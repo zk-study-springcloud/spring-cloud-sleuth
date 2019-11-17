@@ -36,3 +36,15 @@ spring:
     password: admin
 ```
 启动后访问接口，RabbitMQ上会显示一条消息，证明成功。
+### 使用http传输链路，并存储在MySQL
+1. 先注释gateway和userService服务的RabbitMQ依赖
+2. 数据库创建zipkin数据库
+3. 执行zipkin.sql脚本
+ ```shell script
+mysql -uroot -proot80 -Dzipkin < /usr/local/zipkin/zipkin.sql
+```
+4. 只需要在zipkin.jar启动时，增加使用MySQL条件即可
+```shell script
+java -jar zipkin.jar --MYSQL_HOST=192.168.31.124 --MYSQL_USER=root --MYSQL_PASS=root80 --STORAGE_TYPE=mysql
+```
+5. 注意防火墙端口是否开启
